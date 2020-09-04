@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build":"vuepress build ."
+    "build": "vuepress build ."
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/somnusnrlq/Quartz.Net/issues"
   },
-  "homepage": "https://somnusnrlq.github.io/github-actions-demo"
+  "homepage": "https://somnusnrlq.github.io/github-actions-demo",
+  "devDependencies": {
+    "vuepress": "^1.5.4"
+  }
 }
