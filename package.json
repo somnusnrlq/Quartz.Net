@@ -1,4 +1,5 @@
 {
+  "homepage": "https://somnusnrlq.github.io/Quartz.net-cn",
   "name": "quartzdocs",
   "version": "1.0.0",
   "description": "quartz.net 汉化网站",
@@ -19,7 +20,6 @@
   "bugs": {
     "url": "https://github.com/somnusnrlq/Quartz.Net/issues"
   },
-  "homepage": "https://somnusnrlq.github.io/github-actions-demo",
   "devDependencies": {
     "vuepress": "^1.5.4"
   }
