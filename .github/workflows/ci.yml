@@ -1,0 +1,63 @@
+# GitHub 只要发现.github/workflows目录里面有.yml文件，就会自动运行该文件 http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html
+# name: quaartz.net cn 
+# # on字段指定触发 workflow 的条件，只有master分支发生push事件时，才会触发 workflow
+# on:
+#   push:
+#     branches:
+#       - master
+# # workflow 文件的主体是jobs字段，表示要执行的一项或多项任务。
+# jobs:
+#   build-and-deploy:
+#     runs-on: windows-latest
+#     steps: #steps字段指定每个 Job 的运行步骤，可以包含一个或多个步骤。每个步骤都可以指定以下三个字段
+#     # 此处每一个name对应着一个Action，具体执行逻辑已被提供者进行封装，暴露给用户的只是需要用户需要关心和配置的
+#     # 从master上获取最新代码
+#     - name: Checkout Github Action
+#       uses: actions/checkout@master
+    
+#     # 我们的站点使用Hugo框架进行构建，此处是下载相关环境
+#     - name: Setup Hugo
+#       uses: peaceiris/actions-hugo@v2
+#       with:
+#         hugo-version: '0.65.3'
+    
+#     # 为了将资源部署到云服务器，此处下载一个ssh传资料的工具
+#     - name: Setup sshpass
+#       run: sudo apt-get install sshpass
+
+#     # 进行前端资源的构建
+#     - name: Build
+#       run: hugo --minify -d nebula-website
+
+#     # 部署
+#     - name: Deploy
+#       uses: garygrossgarten/github-action-scp@release
+#       with:
+#           local: nebula-website
+#           remote: /home/vesoft/nebula-website
+#           # 涉及偏安全隐私的信息，不要明文暴露在此文件中，因为repo很可能是公开的，会被所有人看见
+#           # ${{ ... }} 会应用你在对应项目设置中，配置的对应serets的键值信息，从而保护私密信息不被看到
+#           host: ${{ secrets.HOST }}
+#           username: vesoft
+#           password: ${{ secrets.PASSWORD }}
+#           concurrency: 20
+
+name: GitHub Actions Build and Deploy Demo
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: Build and Deploy
+      uses: JamesIves/github-pages-deploy-action@master
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACTION_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: build
+        BUILD_SCRIPT: npm install && npm run build

@@ -1,0 +1,22 @@
+{
+  "name": "quartzdocs",
+  "version": "1.0.0",
+  "description": "quartz.net 汉化网站",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/somnusnrlq/Quartz.Net.git"
+  },
+  "keywords": [
+    "quartz.net"
+  ],
+  "author": "lbq",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/somnusnrlq/Quartz.Net/issues"
+  },
+  "homepage": "https://somnusnrlq.github.io/github-actions-demo"
+}
