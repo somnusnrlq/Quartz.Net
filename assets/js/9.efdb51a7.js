@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[9],{458:function(t,n,e){"use strict";e.r(n);var o=e(42),s=Object(o.a)({},(function(){var t=this.$createElement,n=this._self._c||t;return n("div",[this._v("\n    Grab it from "),n("router-link",{attrs:{to:"/download"}},[this._v("downloads page")]),this._v(".\n")],1)}),[],!1,null,null,null);n.default=s.exports}}]);
