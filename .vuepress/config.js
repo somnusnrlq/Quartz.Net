@@ -1,4 +1,6 @@
 module.exports = {
+  // 当前GitHub仓库名
+  "base":"/Quartz.Net/",
   title: 'Quartz.NET',
   description: 'Open-source scheduling framework for .NET.',
   head: [
